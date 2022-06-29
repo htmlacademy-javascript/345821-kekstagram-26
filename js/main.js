@@ -85,4 +85,4 @@ const createPhotos = () => {
 };
 
 const userPhoto = Array.from({length: UserPhotoCount}, createPhotos);
-console.log(userPhoto)
+console.log(userPhoto);
