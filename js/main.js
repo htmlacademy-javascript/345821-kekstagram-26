@@ -7,7 +7,7 @@ function getRandomArrayElement(elements) {
 function validateLength(value, max){
   return value.length <= max;
 }
-validateLength('ggggg', 10);
+validateLength('google', 10);
 
 //функция возвращающая рандомное число
 function getRandomInt(min, max) {
@@ -80,5 +80,4 @@ const createPhoto = (_,idx) => ({
 });
 
 const userPhoto = Array.from({length: USER_PHOTO_COUNT}, createPhoto);
-
 
