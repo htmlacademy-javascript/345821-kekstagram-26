@@ -29,7 +29,7 @@ function shuffleArray(array){
   return newArray;
 }
 //массив с описаниями к фотографиям
-const PhotoDescription = [
+const PHOTO_DESCRIPTIONS = [
   'копая картошку в клумбе',
   'на отдыхе в Капотне',
   'На шашлыках на Манежной площади',
@@ -39,7 +39,7 @@ const PhotoDescription = [
 ];
 
 // массив с именнами авторов
-const userNames = [
+const USER_NAMES = [
   'Василий',
   'Петр',
   'Степан Разин',
@@ -49,7 +49,7 @@ const userNames = [
 ];
 
 // массив с комментариями под фото
-const photoComments = [
+const PHOTO_COMMENTS = [
   'В целом всё неплохо. Но не всё.',
   'Всё отлично!',
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
@@ -60,29 +60,25 @@ const photoComments = [
 
 
 // задаем количество создаваемых фотографий
-let UserPhotoCount = 25;
+let USER_PHOTO_COUNT = 25;
 
-
-const createPhotoComments = (_,index) => ({
+//создаем объект комментария
+const createPhotoComment = (_,index) => ({
   id: index,
   avatar: `img/avatar-${getRandomInt(1, 6)}.svg`,
-  message: shuffleArray(photoComments).slice(0, getRandomInt(1, photoComments.length)),
-  name: getRandomArrayElement(userNames)
+  message: shuffleArray(PHOTO_COMMENTS).slice(0, getRandomInt(1, PHOTO_COMMENTS.length)),
+  name: getRandomArrayElement(USER_NAMES)
 });
 
+//создаем объект фотографии
+const createPhoto = (_,idx) => ({
+  id: idx,
+  url: `photos/${idx}.jpg`,
+  description: getRandomArrayElement(PHOTO_DESCRIPTIONS),
+  likes: getRandomInt(15, 200),
+  comments: Array.from({length:7}, createPhotoComment)
+});
 
-const createPhotos = () => {
-  const photos = [];
-  for (let i = 1; i <= 25; i++) {
-    photos.push({
-      id: i,
-      url: `photos/${i}.jpg`,
-      description: getRandomArrayElement(PhotoDescription),
-      likes: getRandomInt(15, 200),
-      comments: Array.from({length:7}, createPhotoComments)
-    });
-  }
-};
+const userPhoto = Array.from({length: USER_PHOTO_COUNT}, createPhoto);
 
-const userPhoto = Array.from({length: UserPhotoCount}, createPhotos);
-console.log(userPhoto);
+
