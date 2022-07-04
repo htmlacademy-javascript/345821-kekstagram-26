@@ -1,6 +1,4 @@
-import {getRandomArrayElement}  from './util.js';
-import {getRandomInt}  from './util.js';
-import {shuffleArray}  from './util.js';
+import {getRandomArrayElement, getRandomInt, shuffleArray}  from './util.js';
 
 //массив с описаниями к фотографиям
 const PHOTO_DESCRIPTIONS = [

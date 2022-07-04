@@ -28,7 +28,5 @@ function shuffleArray(array){
   return newArray;
 }
 
-export {getRandomArrayElement};
-export {validateLength};
-export {getRandomInt};
-export {shuffleArray};
+export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray};
+
