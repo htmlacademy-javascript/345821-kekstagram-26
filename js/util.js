@@ -29,4 +29,3 @@ function shuffleArray(array){
 }
 
 export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray};
-
