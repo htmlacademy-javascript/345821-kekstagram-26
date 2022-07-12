@@ -1,4 +1,6 @@
+
 import {getRandomArrayElement, getRandomInt, shuffleArray}  from './util.js';
+
 
 //массив с описаниями к фотографиям
 const PHOTO_DESCRIPTIONS = [
@@ -30,6 +32,7 @@ const PHOTO_COMMENTS = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 
+
 // задаем количество создаваемых фотографий
 const USER_PHOTO_COUNT = 25;
 
@@ -44,7 +47,7 @@ const createPhotoComment = (_,index) => ({
 //создаем объект фотографии
 const createPhoto = (_,idx) => ({
   id: idx,
-  url: `photos/${idx}.jpg`,
+  url: `photos/${idx+1}.jpg`,
   description: getRandomArrayElement(PHOTO_DESCRIPTIONS),
   likes: getRandomInt(15, 200),
   comments: Array.from({length:7}, createPhotoComment)
