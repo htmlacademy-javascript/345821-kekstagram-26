@@ -28,4 +28,5 @@ function shuffleArray(array){
   return newArray;
 }
 
+
 export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray};

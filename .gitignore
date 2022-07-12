@@ -10,5 +10,10 @@ node_modules/
 npm-debug.log*
 Thumbs.db
 .vscode/
+<<<<<<< HEAD
 keks.pub
 keks
+=======
+keks
+keks.pub
+>>>>>>> master

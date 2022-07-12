@@ -1,6 +1,7 @@
 
 import {getRandomArrayElement, getRandomInt, shuffleArray}  from './util.js';
 
+
 //массив с описаниями к фотографиям
 const PHOTO_DESCRIPTIONS = [
   'копая картошку в клумбе',
