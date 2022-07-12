@@ -27,4 +27,6 @@ function shuffleArray(array){
   newArray = array.slice(x);
   return newArray;
 }
+
+
 export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray};
