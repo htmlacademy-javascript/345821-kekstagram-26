@@ -1,3 +1,3 @@
+import {makePhotos} from './thumbnails.js';
 
-import './data.js';
-import './thumbnails.js';
+makePhotos();
