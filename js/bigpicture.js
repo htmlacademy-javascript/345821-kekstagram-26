@@ -22,6 +22,7 @@ const onDocumentKeydown = (evt) => {
   }
 };
 
+// активирование закрытие по клику
 const onCloseButtonClick = (evt) => {
   evt.preventDefault();
   closeModal();
@@ -67,5 +68,4 @@ const bigPictureFullscreen = (picture) => {
   fillBigPicture(picture);
   addEventListener();
 };
-
 export {bigPictureFullscreen};
