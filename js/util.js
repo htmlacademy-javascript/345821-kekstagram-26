@@ -15,6 +15,10 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random()*(max-min+1))+min;
 }
 
+const isEscapeKey = (evt) => {
+  return evt.key === 'Escape';
+};
+
 function shuffleArray(array){
   let newArray = [];
   const x = Math.floor(Math.random()* (array.length));
@@ -29,4 +33,4 @@ function shuffleArray(array){
 }
 
 
-export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray};
+export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray, isEscapeKey};
