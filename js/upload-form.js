@@ -66,7 +66,7 @@ formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).every
 
 formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).every((item) =>/^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/.test(item)|| !item.length), 'Хэш-тег должен содержать буквы и числа');
 
-
+const isUploadFormValid = () => formValidator.validate();
 
 const onFormSubmit = (evt) => {
   if (!isUploadFormValid()) {
