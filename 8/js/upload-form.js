@@ -1,4 +1,4 @@
-import { isEscapeKey } from './util.js';
+import { isEscapeKey, checkUnique } from './util.js';
 
 const uploadFile = document.querySelector('#upload-file');
 const uploadCancel = document.querySelector('#upload-cancel');
@@ -66,7 +66,9 @@ formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).every
 
 formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).every((item) =>/^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/.test(item)|| !item.length), 'Хэш-тег должен содержать буквы и числа');
 
+formValidator.addValidator(hashtagsData, (value) => checkUnique(validateHashtag(value)), 'Один и тот же хэш-тег не может быть использован дважды');
 
+const isUploadFormValid = () => formValidator.validate();
 
 const onFormSubmit = (evt) => {
   if (!isUploadFormValid()) {
@@ -74,9 +76,9 @@ const onFormSubmit = (evt) => {
   }
 };
 
-const UploadPhotoForm = () => {
+const uploadPhotoForm = () => {
   uploadFile.addEventListener('change', onInputUploadFormChange);
   form.addEventListener('submit', onFormSubmit);
 };
 
-export {UploadPhotoForm};
+export {uploadPhotoForm};
