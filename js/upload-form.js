@@ -1,4 +1,4 @@
-import { isEscapeKey } from './util.js';
+import { isEscapeKey, testUnique } from './util.js';
 
 const uploadFile = document.querySelector('#upload-file');
 const uploadCancel = document.querySelector('#upload-cancel');
@@ -56,6 +56,8 @@ const formValidator = new Pristine(form, {
   errorTextParent: 'img-upload__field-wrapper',
 });
 
+const splitString = (value) => value.toLowerCase().split(' ');
+
 const validateHashtag = (value) => value.trim().toLowerCase().split(' ');
 
 formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).length <= 5, 'Допускается не более пяти хэш-тегов');
@@ -66,6 +68,9 @@ formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).every
 
 formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).every((item) =>/^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/.test(item)|| !item.length), 'Хэш-тег должен содержать буквы и числа');
 
+
+formValidator.addValidator(hashtagsData, (value) => testUnique(splitString(value)), 'Один и тот же хэш-тег не может быть использован дважды');;
+
 const isUploadFormValid = () => formValidator.validate();
 
 const onFormSubmit = (evt) => {
@@ -74,9 +79,9 @@ const onFormSubmit = (evt) => {
   }
 };
 
-const UploadPhotoForm = () => {
+const uploadPhotoForm = () => {
   uploadFile.addEventListener('change', onInputUploadFormChange);
   form.addEventListener('submit', onFormSubmit);
 };
 
-export {UploadPhotoForm};
+export {uploadPhotoForm};

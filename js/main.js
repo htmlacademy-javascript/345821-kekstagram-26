@@ -1,5 +1,5 @@
 import {makePhotos} from './thumbnails.js';
-import {UploadPhotoForm} from './upload-form.js';
+import {uploadPhotoForm} from './upload-form.js';
 
 makePhotos();
-UploadPhotoForm();
+uploadPhotoForm();
