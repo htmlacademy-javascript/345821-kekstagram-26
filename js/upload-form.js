@@ -56,6 +56,7 @@ const formValidator = new Pristine(form, {
   errorTextParent: 'img-upload__field-wrapper',
 });
 
+
 const validateHashtag = (value) => value.trim().toLowerCase().split(' ');
 
 formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).length <= 5, 'Допускается не более пяти хэш-тегов');
