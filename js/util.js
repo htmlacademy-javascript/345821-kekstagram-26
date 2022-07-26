@@ -17,9 +17,7 @@ function getRandomInt(min, max) {
 }
 
 // активирование клавиши escape
-const isEscapeKey = (evt) => {
-  return evt.key === 'Escape';
-};
+const isEscapeKey = (evt) => evt.key === 'Escape';
 
 //функция для проверки уникальности
 const checkUnique = (value) => {
@@ -44,7 +42,7 @@ function shuffleArray(array){
     array[j] = temp;
   }
   newArray = array.slice(x);
-  return newArray;я
+  return newArray;
 }
 
 
