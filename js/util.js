@@ -1,3 +1,4 @@
+// функция возвращающая рандомные числы
 function getRandomArrayElement(elements) {
   return elements[getRandomInt(0, elements.length - 1)];
 }
@@ -21,7 +22,7 @@ const isEscapeKey = (evt) => {
 };
 
 //функция для проверки уникальности
-const testUnique = (value) => {
+const checkUnique = (value) => {
   const n = value.length;
   for (let i = 0; i < n-1; i++) {
     for (let j = i+1; j < n; j++) {
@@ -47,4 +48,4 @@ function shuffleArray(array){
 }
 
 
-export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray, isEscapeKey, testUnique};
+export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray, isEscapeKey, checkUnique};
