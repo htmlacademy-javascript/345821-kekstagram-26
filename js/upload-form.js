@@ -57,6 +57,9 @@ const formValidator = new Pristine(form, {
 });
 
 
+=======
+//  настраиваем валидацию хештегов
+
 const validateHashtag = (value) => value.trim().toLowerCase().split(' ');
 
 formValidator.addValidator(hashtagsData, (value) => validateHashtag(value).length <= 5, 'Допускается не более пяти хэш-тегов');
