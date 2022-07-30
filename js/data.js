@@ -1,4 +1,3 @@
-//Файл с тестовыми данными. После использования данных с сервера не используются!
 
 import {getRandomArrayElement, getRandomInt, shuffleArray}  from './util.js';
 
@@ -54,6 +53,6 @@ const createPhoto = (_,idx) => ({
   comments: Array.from({length:7}, createPhotoComment)
 });
 
-const userPhoto = () => Array.from({length: USER_PHOTO_COUNT}, createPhoto);
+const userPhoto = (count) => Array.from({length: USER_PHOTO_COUNT}, createPhoto);
 
 export {userPhoto};

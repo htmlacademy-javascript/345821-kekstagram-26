@@ -3,13 +3,10 @@ import { isEscapeKey } from './util.js';
 import {  onSmallerClick , onBiggerClick, resetScale } from './scale-slider.js';
 import { isUploadFormValid } from './validation.js';
 import { changeEffect } from './photo-effect.js';
-import { createErrorPopup, createSuccessPopup } from './popups.js';
-import { sendData } from './api.js';
 
 const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png', 'webp'];
 
 // переменные для взаимодействия с DOM
-const buttonUploadSubmit = document.querySelector('.img-upload__submit');
 const uploadFile = document.querySelector('#upload-file');
 const uploadCancel = document.querySelector('#upload-cancel');
 const uploadSelectImage = document.querySelector('#upload-select-image');
@@ -90,24 +87,9 @@ const onInputUploadFormChange = (evt) => {
   }
 };
 
-const onSuccess = () => {
-  buttonUploadSubmit.disabled = false;
-  closeModal();
-  createSuccessPopup();
-};
-
-const onError = () => {
-  buttonUploadSubmit.disabled = false;
-  createErrorPopup();
-};
-
-
 const onFormSubmit = (evt) => {
-  evt.preventDefault();
-  if (isUploadFormValid()) {
-    buttonUploadSubmit.disabled = true;
-    const formData = new FormData(evt.target);
-    sendData(formData, onSuccess, onError);
+  if (!isUploadFormValid()) {
+    evt.preventDefault();
   }
 };
 
