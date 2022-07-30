@@ -12,6 +12,7 @@ const clearPicturesList = () => {
   pictures.forEach((element) => element.remove());
 };
 
+// функция генерация фото
 const makePhotos = (pictures) => {
   if (imgFilters.classList.contains('img-filters--inactive')) {
     imgFilters.classList.remove('img-filters--inactive');
