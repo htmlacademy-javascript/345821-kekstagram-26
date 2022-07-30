@@ -87,7 +87,6 @@ const onInputUploadFormChange = (evt) => {
   }
 };
 
-
 const onFormSubmit = (evt) => {
   if (!isUploadFormValid()) {
     evt.preventDefault();
