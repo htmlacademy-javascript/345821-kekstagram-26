@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Ignat Polnjuakov](https://up.htmlacademy.ru/javascript/26/user/345821).
-* Наставник: [Марк Коваленко](https://htmlacademy.ru/profile/id1434381).
+* Наставник: [Никита Сигов](https://htmlacademy.ru/profile/crazer).
 
 ---
 
