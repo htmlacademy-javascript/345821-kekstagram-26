@@ -67,7 +67,7 @@ function removeEventListeners() {
   document.removeEventListener('click', onBackgroundClick);
   document.removeEventListener('keydown', onEscapeButtonDown);
 }
-
+// создание попапа об ошибке
 const createErrorPopup = () => {
   document.body.append(errorPopupElement);
   errorButtonElement.addEventListener('click', () => {
@@ -76,6 +76,7 @@ const createErrorPopup = () => {
   addEventListeners();
 };
 
+// создание попапа об успешной отправке формы
 const createSuccessPopup = () => {
   document.body.append(successPopupElement);
   successButtonElement.addEventListener('click', () => {
