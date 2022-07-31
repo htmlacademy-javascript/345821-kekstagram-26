@@ -1,3 +1,4 @@
+// подключение модулей
 import {makePhotos} from './thumbnails.js';
 import {uploadPhotoForm} from './upload-form.js';
 import {getData} from './api.js';
