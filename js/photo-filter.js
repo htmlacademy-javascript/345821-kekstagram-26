@@ -6,10 +6,10 @@ const RERENDER_DELAY = 500;
 const COUNT_RANDOM_PHOTO = 10;
 
 const formElement = document.querySelector('.img-filters__form');
-const filterButtons = document.querySelectorAll('.img-filters__button');
 
 const removeActiveClass = () =>
-  filterButtons.forEach((button) => button.classList.remove('img-filters__button--active'));
+  document.querySelector('.img-filters__button--active').classList.remove('img-filters__button--active');
+
 
 const sortPopularPhotos = (photos) => {
   const tempPhotos = photos.slice();

@@ -1,7 +1,3 @@
-// функция возвращающая рандомные числы
-function getRandomArrayElement(elements) {
-  return elements[getRandomInt(0, elements.length - 1)];
-}
 
 // функция на соотвествие длинны текста в сообщении
 function validateLength(value, max){
@@ -9,12 +5,6 @@ function validateLength(value, max){
 }
 validateLength('google', 10);
 
-//функция возвращающая рандомное число
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random()*(max-min+1))+min;
-}
 
 // активирование клавиши escape
 const isEscapeKey = (evt) => evt.key === 'Escape';
@@ -45,7 +35,7 @@ function shuffleArray(array){
   return newArray;
 }
 
-// функция от кекса
+// функция от кекса(дребазг)
 const debounce = (callback, timeoutDelay = 500) => {
   let timeoutId;
   return (...rest) => {
@@ -54,4 +44,4 @@ const debounce = (callback, timeoutDelay = 500) => {
   };
 };
 
-export {getRandomArrayElement, validateLength, getRandomInt, shuffleArray, isEscapeKey, checkUnique, debounce};
+export {validateLength, shuffleArray, isEscapeKey, checkUnique, debounce};
