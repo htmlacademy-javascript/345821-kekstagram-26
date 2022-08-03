@@ -35,7 +35,7 @@ function shuffleArray(array){
   return newArray;
 }
 
-// функция от кекса(дребазг)
+// функция от кекса
 const debounce = (callback, timeoutDelay = 500) => {
   let timeoutId;
   return (...rest) => {
