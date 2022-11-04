@@ -13,6 +13,7 @@ const formValidator = new Pristine(form, {
   errorTextParent: 'img-upload__field-wrapper',
 });
 
+
 //  настраиваем валидацию хештегов
 const validateHashtag = (value) => value.trim().toLowerCase().split(' ');
 
